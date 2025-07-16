@@ -1,26 +1,77 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tw-animate-css";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* colors */
+  --color-dark: #212121;
+  --color-accent: #e9c664;
+  --color-tertiary: #ffffff;
+  --color-text-dark: #000000;
+  --color-disabled: #979797;
+  --color-effect: #d32020;
+  --color-hover-primary: #000000;
+  --color-hover-secondary: #e9c664;
+
+  /* fonts  */
+  --font-primary: "Abril Fatface", serif;
+  --font-secondary: "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* html,
+body {
+  height: 100%;
+} */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+  height: auto;
+}
+
+@layer base {
+  body {
+    @apply bg-dark font-secondary  leading-relaxed text-[16px] font-normal text-tertiary overflow-x-hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .h1 {
+    @apply font-primary text-[38px] md:text-[51px] xl:text-[67px] leading-tight tracking-tight font-extrabold uppercase;
+  }
+
+  .h2 {
+    @apply font-primary text-[28px] md:text-[37px] xl:text-[50px] leading-snug tracking-tight font-bold uppercase;
+  }
+
+  .h3 {
+    @apply font-primary text-[21px] md:text-[28px] xl:text-[37px] leading-snug font-semibold uppercase;
+  }
+
+  .h4 {
+    @apply font-primary text-[16px] md:text-[21px] xl:text-[28px] leading-snug font-medium uppercase;
+  }
+
+  .h5 {
+    @apply font-primary text-[14px] md:text-[16px] xl:text-[21px] leading-normal font-medium uppercase;
+  }
+
+  .body-bold {
+    @apply font-secondary text-[18px] font-semibold text-tertiary;
+  }
+
+  .body-small {
+    @apply font-secondary text-[10px] md:text-[14px] font-normal text-tertiary;
+  }
+
+  .body-disabled {
+    @apply font-secondary text-[14px] font-normal text-tertiary opacity-50;
+  }
+}
+
+@utility containerBody {
+  @apply max-w-5xl xl:max-w-6xl mx-auto px-5 py-6 container;
 }
