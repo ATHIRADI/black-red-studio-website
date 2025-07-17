@@ -3,7 +3,7 @@ import Navbar from "@/components/section/navbar";
 // import { metaDataContent } from "@/data/sectionsData";
 import { metaDataContent } from "@/data/siteData";
 import { Abril_Fatface, Inter } from "next/font/google";
-// import { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import ClientWrapper from "@/components/effect/ClientWrapper";
 import "./globals.css";
 
@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
         className={`${headingFont.variable} ${bodyFont.variable} antialiased min-h-screen flex flex-col`}
       >
         <Navbar />
-        {/* <Toaster /> */}
+        <Toaster />
         <ClientWrapper>{children}</ClientWrapper>
         <Footer />
       </body>
